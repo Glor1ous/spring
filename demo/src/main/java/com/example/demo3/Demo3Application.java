@@ -14,7 +14,7 @@ public class Demo3Application {
 		SpringApplication.run(Demo3Application.class, args);
 	}
 
-	@GetMapping("/calculate")  // Обработка операций вычислений
+	@GetMapping("/calculate")  // обработка операций вычислений
 	public String calculate(
 			@RequestParam(value = "operation", defaultValue = "add") String operation,
 			@RequestParam(value = "a") double a,
@@ -22,17 +22,17 @@ public class Demo3Application {
 
 		double result = 0.0;
 
-		// Выполнение операции в зависимости от переданного значения параметра "operation"
+		// выполнение операции в зависимости от переданного значения параметра operation
 		switch (operation) {
 			case "add":
-				result = a + b;// Сложение
+				result = a + b;// сложение
 				break;
 			case "multiply":
-				result = a * b;// Умножение
+				result = a * b;// умножение
 				break;
 			case "divide":
 				if (b != 0) {
-					result = a / b;// Деление
+					result = a / b;// деление
 				} else {
 					return "Ошибка: Не удается разделить на ноль!";
 				}
